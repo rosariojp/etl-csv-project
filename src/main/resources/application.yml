@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/etl_csv_project_db
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: none # none, validate, update, create, create-drop
+    show-sql: true
+  sql:
+    init:
+      mode: never # Set to `always` if running sql scripts, else `never`
+      data-locations:
