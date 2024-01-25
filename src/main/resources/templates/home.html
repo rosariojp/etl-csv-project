@@ -27,14 +27,14 @@
 
     <div>
         <h3>Load CSV File</h3>
-        <form th:action="@{/home}" method="POST">
+        <form th:action="@{/home}" method="POST" enctype="multipart/form-data">
             <table>
                 <tbody>
                     <td>
-                        <input type="file">
+                        <input type="file" name="file">
                     </td>
                     <td>
-                        <input type="submit">
+                        <input type="submit" value="Load Data to Records">
                     </td>
                 </tbody>
             </table>
@@ -43,7 +43,7 @@
     <br>
 
     <div>
-        <h3>Uploaded Information</h3>
+        <h3>DB Records Information</h3>
         <table class="db-table">
             <thead>
             <tr>
