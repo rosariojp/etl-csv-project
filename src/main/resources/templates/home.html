@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 30%;
+        }
+
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <h2>ETL CSV Project</h2>
+    <hr><br>
+
+    <div>
+        <h3>Load CSV File</h3>
+        <form th:action="@{/home}" method="POST">
+            <table>
+                <tbody>
+                    <td>
+                        <input type="file">
+                    </td>
+                    <td>
+                        <input type="submit">
+                    </td>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <br>
+
+    <div>
+        <h3>Uploaded Information</h3>
+        <table class="db-table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Birthday</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="person : ${persons}">
+                <td th:text="${person.name}"/>
+                <td th:text="${person.birthday}"/>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
